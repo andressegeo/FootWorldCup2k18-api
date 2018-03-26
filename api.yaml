@@ -1,0 +1,32 @@
+service: api
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: restful.app
+
+
+libraries:
+- name: MySQLdb
+  version: "latest"
+- name: ssl
+  version: latest
+
+skip_files:
+  - ^(.*/)?#.*#$
+  - ^(.*/)?.*~$
+  - ^(.*/)?.*\.py[co]$
+  - ^(.*/)?.*\.ts$
+  - ^(.*/)?.*\.js.map$
+  - ^(.*/)?.*/RCS/.*$
+  - ^(.*/)?\..*$
+  - ^node_modules$
+  - ^env$
+  - ^log\.txt$
+  - ^\.idea$
+  - ^\.git$
+  - ^\.vscode$
+  - ^configs$
+  - env
